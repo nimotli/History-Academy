@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block head %}
+
+    {% endblock %}
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link href="assets/css/agency.min.css" rel="stylesheet">
+
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+</head>
+<body id="page-top">
+
+    {{ include('includes/navbar.twig') }}
+
+    {% block hero %}
+        <header class="masthead">
+            <div class="container">
+                -
+            </div>
+        </header>
+    {% endblock %}
+
+    <div id="container bg-light">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        
+        {{ include('includes/contact.twig') }}
+        {{ include('includes/footer.twig') }}
+
+    </div>
+
+    {% block footerinc %}
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <script src="assets/js/jqBootstrapValidation.js"></script>
+        <script src="assets/js/contact_me.js"></script>
+
+        <script src="assets/js/agency.min.js"></script>
+    {% endblock %}
+</body>
+</html>

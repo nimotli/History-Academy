@@ -1,0 +1,39 @@
+{% extends "layouts/nohero.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    
+{% endblock %}
+
+{% block content %}
+    <section class="py-5">
+        <div class="container">
+            <h1>register</h1>
+            <form method="post">
+                <div class="form-group">
+                    username :<input name="username" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    password :<input name="password" type="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    Confirm password :<input type="password" name="confirm-password" class="form-control">
+                </div>
+                <div class="form-group">
+                    email :<input type="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    first name :<input type="text" name="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    second name :<input type="text" name="secondname" class="form-control">
+                </div>
+                <div class="form-group">
+                    phone number :<input type="text" name="phone" class="form-control">
+                </div>
+                <input type="submit" class="btn btn-primary" value="login">
+            </form>
+        </div>
+    </section>
+{% endblock %}
