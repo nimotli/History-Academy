@@ -44,3 +44,26 @@
   })
 
 })(jQuery); // End of use strict
+function renderPage(id,event)
+{
+    event.preventDefault();
+    $('#pageId').val(id);
+    $('#pageForm').submit();
+}
+
+//course filters
+
+$('#categoriesFilterCourse').on('change', function() {
+  var category = this.value;
+  
+  $.ajax({
+    type: 'POST',
+    url: "mvc/controllers/courseController.php",
+    data: {'route':'filterCourses',
+    'category': category},
+    dataType: "text",
+    success: function(resultData) { 
+      $('#courseHolder').html(resultData);
+     }
+});
+})

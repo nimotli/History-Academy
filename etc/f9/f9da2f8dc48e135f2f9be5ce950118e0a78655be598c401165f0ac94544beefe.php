@@ -64,29 +64,31 @@ class __TwigTemplate_a1a0b1f88576aa26176cb01d2de366a3bd5dcb1a6f92759c249f374fdf0
         // line 34
         echo "
     <div id=\"container bg-light\">
+        
+        
         ";
-        // line 36
+        // line 38
         $this->displayBlock('content', $context, $blocks);
-        // line 39
+        // line 41
         echo "    </div>
 
     <div id=\"footer\">
         
         ";
-        // line 43
+        // line 45
         echo twig_include($this->env, $context, "includes/contact.twig");
         echo "
         ";
-        // line 44
+        // line 46
         echo twig_include($this->env, $context, "includes/footer.twig");
         echo "
 
     </div>
 
     ";
-        // line 48
+        // line 50
         $this->displayBlock('footerinc', $context, $blocks);
-        // line 59
+        // line 61
         echo "</body>
 </html>";
     }
@@ -116,18 +118,20 @@ class __TwigTemplate_a1a0b1f88576aa26176cb01d2de366a3bd5dcb1a6f92759c249f374fdf0
     ";
     }
 
-    // line 36
+    // line 38
     public function block_content($context, array $blocks = array())
     {
-        // line 37
-        echo "        
+        // line 39
+        echo "        ";
+        echo twig_include($this->env, $context, "includes/alerts.twig");
+        echo "
         ";
     }
 
-    // line 48
+    // line 50
     public function block_footerinc($context, array $blocks = array())
     {
-        // line 49
+        // line 51
         echo "        <script src=\"vendor/jquery/jquery.min.js\"></script>
         <script src=\"vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
 
@@ -136,7 +140,7 @@ class __TwigTemplate_a1a0b1f88576aa26176cb01d2de366a3bd5dcb1a6f92759c249f374fdf0
         <script src=\"assets/js/jqBootstrapValidation.js\"></script>
         <script src=\"assets/js/contact_me.js\"></script>
 
-        <script src=\"assets/js/agency.min.js\"></script>
+        <script src=\"assets/js/agency.js\"></script>
     ";
     }
 
@@ -152,7 +156,7 @@ class __TwigTemplate_a1a0b1f88576aa26176cb01d2de366a3bd5dcb1a6f92759c249f374fdf0
 
     public function getDebugInfo()
     {
-        return array (  131 => 49,  128 => 48,  123 => 37,  120 => 36,  111 => 28,  108 => 27,  103 => 21,  98 => 9,  95 => 8,  90 => 59,  88 => 48,  81 => 44,  77 => 43,  71 => 39,  69 => 36,  65 => 34,  63 => 27,  58 => 25,  51 => 21,  39 => 11,  37 => 8,  28 => 1,);
+        return array (  135 => 51,  132 => 50,  125 => 39,  122 => 38,  113 => 28,  110 => 27,  105 => 21,  100 => 9,  97 => 8,  92 => 61,  90 => 50,  83 => 46,  79 => 45,  73 => 41,  71 => 38,  65 => 34,  63 => 27,  58 => 25,  51 => 21,  39 => 11,  37 => 8,  28 => 1,);
     }
 
     public function getSourceContext()

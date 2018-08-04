@@ -7,22 +7,43 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
+                
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="?page=home">home</a>
+                    <a class="nav-link js-scroll-trigger" href="?page=home">البداية</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                    <a class="nav-link js-scroll-trigger" href="?page=courses-p">دروس</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="?page=login">login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="?page=register">register</a>
-                </li>
+                {% for page in pages %}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" onclick="renderPage({{ page['id'] }},event)" >{{ page['name'] }}</a>
+                    </li>
+                {% endfor %}
+                {% if session['logedin'] %}
+                    {% if session['logedinUser']['admin'] == 1%}
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="?page=admin">الإدارة</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="?page=profile&id={{session['logedinUser']['id']}}">صفحتي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="mvc/controllers/userController.php?action=logout">تسجيل الخروج</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="?page=login">تسجيل الدخول</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="?page=register">تسجيل</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
+        <form method="post" action="mvc/controllers/pageController.php" id="pageForm">
+            <input type="hidden" name="route" value="pageRender" id="pageRender">
+            <input type="hidden" name="pageId" value="" id="pageId" >
+        </form>
     </div>
 </nav>

@@ -24,7 +24,7 @@ class __TwigTemplate_40ee2cb9cd72bf960c892cd1848f4e86fb3106f8e97057a8c5683ab71fa
     <div class=\"container\">
         <div class=\"row\">
         <div class=\"col-lg-12 text-center\">
-            <h2 class=\"section-heading text-uppercase\">Contact Us</h2>
+            <h2 class=\"section-heading text-uppercase\">تواصل معنا</h2>
             <h3 class=\"section-subheading text-muted\">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
         </div>

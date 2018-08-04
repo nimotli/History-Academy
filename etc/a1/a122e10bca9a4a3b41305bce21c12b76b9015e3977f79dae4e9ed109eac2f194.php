@@ -49,16 +49,21 @@ class __TwigTemplate_d37e56b009590c6374be130f45bb65fbf11955c7fd9580d11e749fd94cd
     {
         // line 10
         echo "    <section class=\"py-5\">
+        ";
+        // line 11
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         <div class=\"container\">
-            <h1>login</h1>
-            <form method=\"post\">
+            <h1>تسجيل الدخول</h1>
+            <form method=\"post\" action=\"mvc/controllers/userController.php\">
                 <div class=\"form-group\">
-                    username :<input type=\"text\" class=\"form-control\">
+                    username :<input type=\"text\" name=\"username\" class=\"form-control\">
                 </div>
                 <div class=\"form-group\">
-                    password :<input type=\"password\" class=\"form-control\">
+                    password :<input type=\"password\" name=\"password\" class=\"form-control\">
                 </div>
                 <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">
+                <input type=\"hidden\" name=\"route\" value=\"login\">
             </form>
         </div>
     </section>
@@ -77,7 +82,7 @@ class __TwigTemplate_d37e56b009590c6374be130f45bb65fbf11955c7fd9580d11e749fd94cd
 
     public function getDebugInfo()
     {
-        return array (  51 => 10,  48 => 9,  43 => 6,  40 => 5,  34 => 3,  15 => 1,);
+        return array (  54 => 11,  51 => 10,  48 => 9,  43 => 6,  40 => 5,  34 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

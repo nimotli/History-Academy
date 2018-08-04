@@ -64,30 +64,32 @@ class __TwigTemplate_6fb6b70f02e897adabba3e256581a05409ef963e51b6fe9c8323225cffe
         // line 38
         echo "
     <div id=\"container bg-light\">
+        
+        
         ";
-        // line 40
+        // line 42
         $this->displayBlock('content', $context, $blocks);
-        // line 43
+        // line 45
         echo "    </div>
 
     <div id=\"footer\">
 
         ";
-        // line 47
+        // line 49
         echo twig_include($this->env, $context, "includes/contact.twig");
         echo "
 
         ";
-        // line 49
+        // line 51
         echo twig_include($this->env, $context, "includes/footer.twig");
         echo "
 
     </div>
 
     ";
-        // line 53
+        // line 55
         $this->displayBlock('footerinc', $context, $blocks);
-        // line 64
+        // line 66
         echo "</body>
 </html>";
     }
@@ -112,7 +114,7 @@ class __TwigTemplate_6fb6b70f02e897adabba3e256581a05409ef963e51b6fe9c8323225cffe
         echo "        <header class=\"masthead\">
             <div class=\"container\">
                 <div class=\"intro-text\">
-                    <div class=\"intro-lead-in\">Welcome To Our Studio!</div>
+                    <div class=\"intro-lead-in\">Welcome To Our website!</div>
                     <div class=\"intro-heading text-uppercase\">It's Nice To Meet You</div>
                     <a class=\"btn btn-primary btn-xl text-uppercase js-scroll-trigger\" href=\"#services\">Tell Me More</a>
                 </div>
@@ -121,18 +123,20 @@ class __TwigTemplate_6fb6b70f02e897adabba3e256581a05409ef963e51b6fe9c8323225cffe
     ";
     }
 
-    // line 40
+    // line 42
     public function block_content($context, array $blocks = array())
     {
-        // line 41
-        echo "        
+        // line 43
+        echo "        ";
+        echo twig_include($this->env, $context, "includes/alerts.twig");
+        echo "
         ";
     }
 
-    // line 53
+    // line 55
     public function block_footerinc($context, array $blocks = array())
     {
-        // line 54
+        // line 56
         echo "        <script src=\"vendor/jquery/jquery.min.js\"></script>
         <script src=\"vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
 
@@ -141,7 +145,7 @@ class __TwigTemplate_6fb6b70f02e897adabba3e256581a05409ef963e51b6fe9c8323225cffe
         <script src=\"assets/js/jqBootstrapValidation.js\"></script>
         <script src=\"assets/js/contact_me.js\"></script>
 
-        <script src=\"assets/js/agency.min.js\"></script>
+        <script src=\"assets/js/agency.js\"></script>
     ";
     }
 
@@ -157,7 +161,7 @@ class __TwigTemplate_6fb6b70f02e897adabba3e256581a05409ef963e51b6fe9c8323225cffe
 
     public function getDebugInfo()
     {
-        return array (  136 => 54,  133 => 53,  128 => 41,  125 => 40,  112 => 28,  109 => 27,  104 => 21,  99 => 9,  96 => 8,  91 => 64,  89 => 53,  82 => 49,  77 => 47,  71 => 43,  69 => 40,  65 => 38,  63 => 27,  58 => 25,  51 => 21,  39 => 11,  37 => 8,  28 => 1,);
+        return array (  140 => 56,  137 => 55,  130 => 43,  127 => 42,  114 => 28,  111 => 27,  106 => 21,  101 => 9,  98 => 8,  93 => 66,  91 => 55,  84 => 51,  79 => 49,  73 => 45,  71 => 42,  65 => 38,  63 => 27,  58 => 25,  51 => 21,  39 => 11,  37 => 8,  28 => 1,);
     }
 
     public function getSourceContext()

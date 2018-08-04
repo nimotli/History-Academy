@@ -28,7 +28,7 @@
         <header class="masthead">
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-lead-in">Welcome To Our Studio!</div>
+                    <div class="intro-lead-in">Welcome To Our website!</div>
                     <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
                 </div>
@@ -37,8 +37,10 @@
     {% endblock %}
 
     <div id="container bg-light">
-        {% block content %}
         
+        
+        {% block content %}
+        {{ include('includes/alerts.twig') }}
         {% endblock %}
     </div>
 
@@ -59,7 +61,7 @@
         <script src="assets/js/jqBootstrapValidation.js"></script>
         <script src="assets/js/contact_me.js"></script>
 
-        <script src="assets/js/agency.min.js"></script>
+        <script src="assets/js/agency.js"></script>
     {% endblock %}
 </body>
 </html>

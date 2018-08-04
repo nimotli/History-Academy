@@ -49,11 +49,15 @@ class __TwigTemplate_3e9bf8795f30a713c369ccbdf616b8349609119cabadd90b951361b267b
     {
         // line 10
         echo "    <section class=\"py-5\">
+    ";
+        // line 11
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         <div class=\"container\">
             <h1>register</h1>
-            <form method=\"post\">
+            <form method=\"post\" action=\"mvc/controllers/userController.php\">
                 <div class=\"form-group\">
-                    username :<input name=\"username\" type=\"text\" class=\"form-control\">
+                    username :<input name=\"username\" type=\"text\" class=\"form-control\" placeholder=\"Username\">
                 </div>
                 <div class=\"form-group\">
                     password :<input name=\"password\" type=\"password\" class=\"form-control\">
@@ -68,12 +72,16 @@ class __TwigTemplate_3e9bf8795f30a713c369ccbdf616b8349609119cabadd90b951361b267b
                     first name :<input type=\"text\" name=\"name\" class=\"form-control\">
                 </div>
                 <div class=\"form-group\">
-                    second name :<input type=\"text\" name=\"secondname\" class=\"form-control\">
+                    second name :<input type=\"text\" name=\"secondName\" class=\"form-control\">
+                </div>
+                <div class=\"form-group\">
+                    address :<input type=\"text\" name=\"address\" class=\"form-control\">
                 </div>
                 <div class=\"form-group\">
                     phone number :<input type=\"text\" name=\"phone\" class=\"form-control\">
                 </div>
-                <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">
+                <input type=\"submit\" class=\"btn btn-primary\" value=\"register\">
+                <input type=\"hidden\" name=\"route\" value=\"register\">
             </form>
         </div>
     </section>
@@ -92,7 +100,7 @@ class __TwigTemplate_3e9bf8795f30a713c369ccbdf616b8349609119cabadd90b951361b267b
 
     public function getDebugInfo()
     {
-        return array (  51 => 10,  48 => 9,  43 => 6,  40 => 5,  34 => 3,  15 => 1,);
+        return array (  54 => 11,  51 => 10,  48 => 9,  43 => 6,  40 => 5,  34 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
