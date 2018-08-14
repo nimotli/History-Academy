@@ -50,10 +50,10 @@ class __TwigTemplate_379ec158c124f5a8dcef3aaaae63a01ee5b833d38ed4c031824850fd709
         // line 10
         echo "    <section class=\"py-5\">
         <div class=\"container\">
-            <h1>Index</h1>
-            <p class=\"important\">
-                Welcome to my awesome homepage.
-            </p>
+            ";
+        // line 12
+        $this->displayParentBlock("content", $context, $blocks);
+        echo "
         </div>
     </section>
 ";
@@ -71,7 +71,7 @@ class __TwigTemplate_379ec158c124f5a8dcef3aaaae63a01ee5b833d38ed4c031824850fd709
 
     public function getDebugInfo()
     {
-        return array (  51 => 10,  48 => 9,  43 => 6,  40 => 5,  34 => 3,  15 => 1,);
+        return array (  55 => 12,  51 => 10,  48 => 9,  43 => 6,  40 => 5,  34 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

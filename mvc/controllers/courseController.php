@@ -3,6 +3,8 @@ session_start();
 require_once('../models/courseModel.php');
 require_once('../models/categoryModel.php');
 require_once('../models/coursePartModel.php');
+require_once('../models/userCourseModel.php');
+require_once('../models/userModel.php');
 if($_SERVER['REQUEST_METHOD'] === 'POST') 
 {
     switch($_POST['route'])
@@ -28,6 +30,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         case 'filterCourses':
             sendFilterCourses($_POST['category']);
             break;
+        case 'affect':
+            affectt($_POST['course'],$_POST['user']);
     }
 }
 else
@@ -44,7 +48,7 @@ else
             updateCourse($_GET['id']);
             break;
         case 'updateContent':
-            editCourseContent($_GET['id']);
+            editCourseContent($_GET['id'],$_GET['course']);
             break;
         case 'present':
             presentCourse();
@@ -63,6 +67,12 @@ else
             break;
         case 'showCoursePart':
             showCoursePart($_GET['id']);
+            break;
+        case 'pay':
+            initializePay($_GET['id']);
+            break;
+        case 'afct':
+            affecting($_GET['id']);
             break;
     }
 }
@@ -147,12 +157,12 @@ function editCourse($values)
     showCourses();
 }
 
-function editCourseContent($id)
+function editCourseContent($id,$cr)
 {
     $model=new coursePartModel();
     $coursePart=$model->find($id);
     $_SESSION['coursePart']=$coursePart[0];
-    $_SESSION['courseId']=$id;
+    $_SESSION['courseId']=$cr;
     header('Location:../../?page=coursePart-edit');
 }
 
@@ -226,8 +236,13 @@ function updateContent($values)
 }
 function presentCourseParts($id)
 {
+    $type="visit";
+    $model=new courseModel();
+    $course=$model->find($id)[0];
     $model=new coursePartModel();
     $courseParts=$model->all();
+    $model=new userCourseModel();
+    $userCourses=$model->all();
     $cps=array();
     
     foreach($courseParts as $cp)
@@ -237,8 +252,21 @@ function presentCourseParts($id)
             array_push($cps,$cp);
         }
     }
+
+    foreach($userCourses as $userCourse)
+    {
+        if($userCourse['user']==$_SESSION['logedinUser']['id'])
+        {
+            if($userCourse['course']==$id)
+            {
+                $type="baught";
+            }
+        }
+    }
+    $_SESSION['course']=$course;
     $_SESSION['coursePart']=$cps;
     $_SESSION['courseId']=$id;
+    $_SESSION['type']=$type;
     header('Location:../../?page=courseContent');
 }
 function showCoursePart($id)
@@ -299,4 +327,40 @@ function sendFilterCourses($category)
         }
     }
     echo $formedDate;
+}
+
+function initializePay($id)
+{
+    $model=new courseModel();
+    $course=$model->find($id)[0];
+    $_SESSION['course']=$course;
+
+    header('Location:../../?page=pay&for=course');
+}
+function affectt($course,$us)
+{
+    $model=new userModel();
+    $users=$model->all();
+    $finaluser="";
+    foreach($users as $user)
+    {
+        if($user['username']==$us)
+        {
+            $finaluser=$user['id'];
+            break;
+        }
+    }
+    $userLive=new UserCourse(['user'=>$finaluser,'course'=>$course]);
+    $model=new userCourseModel();
+    $model->insert($userLive);
+    showCourses();
+}
+function affecting($cour)
+{
+    $model=new userModel();
+    $users=$model->all();
+    $model=new courseModel();
+    $course=$model->find($cour)[0];
+    $_SESSION['course']=$course;
+    header('Location:../../?page=affectuserCourse');
 }

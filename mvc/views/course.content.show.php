@@ -12,15 +12,15 @@
     <!-- coursePart Content -->
     <div id="coursePart-content-wrapper">
         <div class="container-fluid">
-            <h1>Course Part</h1>
-            <p>Buffer text.</p>
+            <h1>محتوى الدرس</h1>
+            <p></p>
             <a href="mvc/controllers/courseController.php?action=content-create&id={{ courseId }}" class="btn btn-success float-right">Create coursePart</a>
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
+                        <th>رقم</th>
+                        <th>العنوان</th>
+                        <th>الوصف</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -31,8 +31,8 @@
                         <td>{{ coursePart.name}}</td>
                         <td>{{ coursePart.description|length > 100 ? coursePart.description|slice(0, 100) ~ '...' : coursePart.description  }}</td>
                         <td>
-                            <a class="btn btn-primary" href="mvc/controllers/courseController.php?action=updateContent&id={{ coursePart.id }}">Update</a>
-                            <a class="btn btn-danger"  onclick="deleteEntity(event,{{ coursePart.id }})">Delete</a>
+                            <a class="btn btn-primary" href="mvc/controllers/courseController.php?action=updateContent&id={{ coursePart.id }}&course={{courseId}}">تعديل</a>
+                            <a class="btn btn-danger"  onclick="deleteEntity(event,{{ coursePart.id }})">محو</a>
                         </td>
                     </tr>
                     {% endfor %}

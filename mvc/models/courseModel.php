@@ -1,7 +1,7 @@
 <?php
 require_once('../entities/course.php');
 require_once('../DatabaseManager.php');
-class courseModel{
+class CourseModel{
     
     public function insert(Course $course)
     {

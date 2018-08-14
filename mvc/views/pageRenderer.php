@@ -1,6 +1,6 @@
 {% extends "layouts/nohero.twig" %}
 
-{% block title %}admin{% endblock %}
+{% block title %}{{page['name']}}{% endblock %}
 
 {% block head %}
     

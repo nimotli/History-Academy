@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="description" content="{{sets['siteDescription']}}">
+    <meta name="Keywords" content="{{sets['siteKeywords']}}">
     {% block head %}
 
     {% endblock %}
@@ -18,7 +19,7 @@
 
     <link href="assets/css/agency.min.css" rel="stylesheet">
 
-    <title>{% block title %}{% endblock %} - My Webpage</title>
+    <title>{% block title %}{% endblock %} - {{sets['siteName']}}</title>
 </head>
 <body id="page-top">
 
@@ -28,19 +29,16 @@
         <header class="masthead">
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-lead-in">Welcome To Our website!</div>
-                    <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+                    <div class="intro-lead-in text-uppercase">{{sets['welcomeMsg']}}</div>
+                    <div class="btn btn-primary intro-heading text-uppercase">{{sets['welcomeMsg2']}}</div>
                 </div>
             </div>
         </header>
     {% endblock %}
 
     <div id="container bg-light">
-        
-        
         {% block content %}
-        {{ include('includes/alerts.twig') }}
+            {{sets['homeContent'] | raw}}
         {% endblock %}
     </div>
 

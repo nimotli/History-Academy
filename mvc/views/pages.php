@@ -1,6 +1,6 @@
 {% extends "layouts/admin.twig" %}
 
-{% block title %}admin{% endblock %}
+{% block title %}الصفحات{% endblock %}
 
 {% block head %}
     
@@ -12,14 +12,14 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>Pages</h1>
-            <p>Buffer text.</p>
-            <a href="?page=page-create" class="btn btn-success float-right">Create Page</a>
+            <h1>الصفحات</h1>
+            <p>ادارة الصفحات</p>
+            <a href="?page=page-create" class="btn btn-success float-right">صفحة جديدة</a>
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Name</th>
+                        <th>الرقم</th>
+                        <th>العنوان</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{ page.id}}</td>
                         <td>{{ page.name}}</td>
-                        <td><a class="btn btn-primary" href="mvc/controllers/pageController.php?action=update&id={{ page.id }}">Update</a><a class="btn btn-danger"  onclick="deleteEntity(event,{{ page.id }})">Delete</a></td>
+                        <td><a class="btn btn-primary" href="mvc/controllers/pageController.php?action=update&id={{ page.id }}">تغيير</a><a class="btn btn-danger"  onclick="deleteEntity(event,{{ page.id }})">محو</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

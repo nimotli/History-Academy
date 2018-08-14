@@ -23,7 +23,6 @@ class UserModel{
     public function update($id,$user)
     {
         array_push($user,$id);
-        echo (json_encode($user));
         DatabaseManager::update('UPDATE user '.User::$updateStruct,$user);
     }
 

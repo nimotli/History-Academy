@@ -44,6 +44,18 @@
   })
 
 })(jQuery); // End of use strict
+$('input[type=radio][name=paymentAnalysis]').on('change', function() {
+  switch($(this).val()) {
+      case 'automatic':
+          $('#automated').show(300);
+          $('#manual').hide(300);
+          break;
+      case 'manual':
+          $('#manual').show(300);
+          $('#automated').hide(300);
+          break;
+  }
+});
 function renderPage(id,event)
 {
     event.preventDefault();

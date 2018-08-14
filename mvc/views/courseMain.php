@@ -1,9 +1,8 @@
 {% extends "layouts/nohero.twig" %}
 
-{% block title %}admin{% endblock %}
+{% block title %}الدروس{% endblock %}
 
 {% block head %}
-    
 {% endblock %}
 
 {% block content %}
@@ -12,11 +11,11 @@
     <div id="page-content-wrapper">
         <div class="container">
             <div style="padding-top:80px;padding-bottom:50px;">
-                <center><h1>Courses</h1></center>
+                <center><h1>الدروس</h1></center>
                 <div style="background-color:#fed136;" class="py-3 rounded">
                     <form action="">
                         <div class="col-md-4">
-                            Category:
+                            الفئة:
                             <select name="categories" id="categoriesFilterCourse" class="form-control my-2">
                                 <option value="-1">------</option>
                                 {% for category in categories %}

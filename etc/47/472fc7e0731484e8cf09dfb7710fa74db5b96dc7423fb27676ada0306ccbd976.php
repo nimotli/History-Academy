@@ -11,8 +11,8 @@ class __TwigTemplate_0c8f24d40507cd897114b55f44cd6dbafaeea28c63d1fed380b239b1baa
 
         $this->source = $this->getSourceContext();
 
-        // line 1
-        $this->parent = $this->loadTemplate("layouts/admin.twig", "admin.php", 1);
+        // line 2
+        $this->parent = $this->loadTemplate("layouts/admin.twig", "admin.php", 2);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'head' => array($this, 'block_head'),
@@ -55,9 +55,12 @@ class __TwigTemplate_0c8f24d40507cd897114b55f44cd6dbafaeea28c63d1fed380b239b1baa
     <!-- Page Content -->
     <div id=\"page-content-wrapper\">
         <div class=\"container-fluid\">
-            <h1>TEXT</h1>
-            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+            <h1>ادارة موقع ";
+        // line 16
+        echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = ($context["sets"] ?? null)) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["siteName"] ?? null) : null), "html", null, true);
+        echo "</h1>
+            <p>هذه المنصة تسمح لك بادارة محتوى الموقع</p>
+            <p> - <code>#page-content-wrapper</code>.</p>
             
         </div>
     </div>
@@ -87,7 +90,7 @@ class __TwigTemplate_0c8f24d40507cd897114b55f44cd6dbafaeea28c63d1fed380b239b1baa
 
     public function getDebugInfo()
     {
-        return array (  71 => 24,  68 => 23,  53 => 11,  50 => 10,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
+        return array (  74 => 24,  71 => 23,  60 => 16,  53 => 11,  50 => 10,  44 => 6,  41 => 5,  35 => 3,  15 => 2,);
     }
 
     public function getSourceContext()

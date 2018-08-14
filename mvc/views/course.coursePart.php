@@ -1,6 +1,6 @@
 {% extends "layouts/nohero.twig" %}
 
-{% block title %}admin{% endblock %}
+{% block title %}فقرة الدرس{% endblock %}
 
 {% block head %}
     
@@ -16,7 +16,7 @@
                 <div class="py-3">
                     {{ coursePart['content'] | raw }}
                 </div>
-                <a href="mvc/controllers/courseController.php?action=courseParts&id={{ coursePart['course'] }}">back to course Content</a>
+                <a href="mvc/controllers/courseController.php?action=courseParts&id={{ coursePart['course'] }}">الرجوع الى الدرس</a>
                 </div>
             </div>
         </div>

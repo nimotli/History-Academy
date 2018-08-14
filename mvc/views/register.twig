@@ -1,6 +1,6 @@
 {% extends "layouts/nohero.twig" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}التسجيل{% endblock %}
 
 {% block head %}
     
@@ -10,33 +10,33 @@
     <section class="py-5">
     {{ parent() }}
         <div class="container">
-            <h1>register</h1>
+            <h1>تسجيل</h1>
             <form method="post" action="mvc/controllers/userController.php">
                 <div class="form-group">
-                    username :<input name="username" type="text" class="form-control" placeholder="Username">
+                    <p align="right">اسم المستخدم</p><input name="username" type="text" class="form-control" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    password :<input name="password" type="password" class="form-control">
+                    <p align="right">كلمة المرور</p><input name="password" type="password" class="form-control">
                 </div>
                 <div class="form-group">
-                    Confirm password :<input type="password" name="confirm-password" class="form-control">
+                    <p align="right">تأكيد كلمة المرور</p><input type="password" name="confirm-password" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    email :<input type="email" name="email" class="form-control">
+                    <p align="right">البريد الإلكتروني</p><input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    first name :<input type="text" name="name" class="form-control">
+                    <p align="right">الإسم</p><input type="text" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    second name :<input type="text" name="secondName" class="form-control">
+                    <p align="right">النسب</p><input type="text" name="secondName" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    address :<input type="text" name="address" class="form-control">
+                    <p align="right">العنوان</p><input type="text" name="address" class="form-control">
                 </div>
                 <div class="form-group">
-                    phone number :<input type="text" name="phone" class="form-control">
+                    <p align="right">رقم الهاتف</p><input type="text" name="phone" class="form-control">
                 </div>
-                <input type="submit" class="btn btn-primary" value="register">
+                <input type="submit" class="btn btn-primary" value="تسجيل">
                 <input type="hidden" name="route" value="register">
             </form>
         </div>

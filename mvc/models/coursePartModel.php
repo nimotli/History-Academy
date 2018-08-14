@@ -1,12 +1,12 @@
 <?php
 require_once('../entities/coursePart.php');
 require_once('../DatabaseManager.php');
-class coursePartModel{
+class CoursePartModel{
     
     public function insert(CoursePart $coursePart)
     {
         $attributes=get_object_vars($coursePart);
-        $sql='INSERT INTO coursePart '.CoursePart::$sqlStruct;
+        $sql='INSERT INTO coursepart '.CoursePart::$sqlStruct;
         $values=array();
         foreach(array_keys($attributes) as $attribute)
         {
@@ -19,22 +19,22 @@ class coursePartModel{
     public function update($id,$coursePart)
     {
         array_push($coursePart,$id);
-        DatabaseManager::update('UPDATE coursePart '.CoursePart::$updateStruct,$coursePart);
+        DatabaseManager::update('UPDATE coursepart '.CoursePart::$updateStruct,$coursePart);
     }
 
     public function delete($id)
     {
-        DatabaseManager::delete('DELETE from coursePart where id = ?',$id);
+        DatabaseManager::delete('DELETE from coursepart where id = ?',$id);
     }
 
     public function all()
     {
-        return DatabaseManager::query('SELECT * from coursePart');
+        return DatabaseManager::query('SELECT * from coursepart ');
     }
 
     public function find($id)
     {
-        $object = DatabaseManager::query('SELECT * from coursePart where id ='.$id);
+        $object = DatabaseManager::query('SELECT * from coursepart where id ='.$id);
         return $object;
     }
 

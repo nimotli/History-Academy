@@ -1,7 +1,7 @@
 <?php
 require_once('../entities/category.php');
 require_once('../DatabaseManager.php');
-class categoryModel{
+class CategoryModel{
     
     public function insert(Category $category)
     {

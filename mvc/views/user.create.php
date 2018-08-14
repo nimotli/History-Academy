@@ -1,6 +1,6 @@
 {% extends "layouts/admin.twig" %}
 
-{% block title %}admin{% endblock %}
+{% block title %}اضافة مستعمل{% endblock %}
 
 {% block head %}
     
@@ -12,40 +12,47 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>Create a new user</h1>
-            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+            <h1>اضافة مستعمل</h1>
+            <p>اضافة مستعمل جديد</p>
             <form method="post" action="mvc/controllers/userController.php">
                 <div class="form-group">
-                    username :<input name="username" type="text" class="form-control" placeholder="Username">
+                <p align="right">اسم المستعمل</p><input name="username" type="text" class="form-control" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                    password :<input name="password" type="password" class="form-control">
+                <p align="right">كلمة المرور</p><input name="password" type="password" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    Confirm password :<input type="password" name="confirm-password" class="form-control">
+                <p align="right">تأكيد كلمة المرور</p><input type="password" name="confirm-password" class="form-control" required>
+                </div>
+                {% if session['logedinUser']['admin']==2 %}
+                <div class="form-group">
+                <p align="right">البريد الإلكتروني</p><input type="email" name="email" class="form-control"  required>
+                </div>
+                {% else %}
+                <input type="hidden" name="email" class="form-control" value=" " required>
+                {% endif %}
+                <div class="form-group">
+                <p align="right">الاسم</p><input type="text" name="name" class="form-control">
                 </div>
                 <div class="form-group">
-                    email :<input type="email" name="email" class="form-control">
+                <p align="right">النسب</p><input type="text" name="secondName" class="form-control">
                 </div>
                 <div class="form-group">
-                    first name :<input type="text" name="name" class="form-control">
+                <p align="right">العنوان</p><input type="text" name="address" class="form-control">
                 </div>
                 <div class="form-group">
-                    second name :<input type="text" name="secondName" class="form-control">
+                <p align="right">الهاتف</p><input type="text" name="phone" class="form-control">
                 </div>
                 <div class="form-group">
-                    address :<input type="text" name="address" class="form-control">
-                </div>
-                <div class="form-group">
-                    phone number :<input type="text" name="phone" class="form-control">
-                </div>
-                <div class="form-group">
-                    type :<select name="type" class="form-control">
-                        <option value="1">Admin</option>
-                        <option value="0">Client</option>
+                <p align="right">النوع</p><select name="type" class="form-control">
+                {% if session['logedinUser']['admin']==2 %}
+                        <option value="2">مدير عام</option>
+                {% endif %}
+                        <option value="1">مدير</option>
+                        <option value="0">عميل</option>
                     </select>
                 </div>
-                <input type="submit" class="btn btn-primary" value="register">
+                <input type="submit" class="btn btn-primary" value="اضافة">
                 <input type="hidden" name="route" value="user-create">
             </form>
         </div>

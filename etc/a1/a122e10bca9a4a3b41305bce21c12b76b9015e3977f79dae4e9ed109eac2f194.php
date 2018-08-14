@@ -33,7 +33,7 @@ class __TwigTemplate_d37e56b009590c6374be130f45bb65fbf11955c7fd9580d11e749fd94cd
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo "Home";
+        echo "تسجيل الدخول";
     }
 
     // line 5
@@ -54,15 +54,17 @@ class __TwigTemplate_d37e56b009590c6374be130f45bb65fbf11955c7fd9580d11e749fd94cd
         $this->displayParentBlock("content", $context, $blocks);
         echo "
         <div class=\"container\">
-            <h1>تسجيل الدخول</h1>
-            <form method=\"post\" action=\"mvc/controllers/userController.php\">
+            <h1 align=\"right\">تسجيل الدخول</h1>
+            <form method=\"post\" action=\"mvc/controllers/userController.php\" novalidate=\"novalidate\">
                 <div class=\"form-group\">
-                    username :<input type=\"text\" name=\"username\" class=\"form-control\">
+                    <p align=\"right\">اسم المستخدم</p><input type=\"text\" name=\"username\" class=\"form-control\" required data-validation-required-message=\"المرجو ادخال اسم المستخدم\">
+                    <p class=\"help-block text-danger\"></p>
                 </div>
                 <div class=\"form-group\">
-                    password :<input type=\"password\" name=\"password\" class=\"form-control\">
+                    <p align=\"right\">كلمة المرور</p><input type=\"password\" name=\"password\" class=\"form-control\" required data-validation-required-message=\"المرجو ادخال كلمة المرور\">
+                    <p class=\"help-block text-danger\"></p>
                 </div>
-                <input type=\"submit\" class=\"btn btn-primary\" value=\"login\">
+                <input type=\"submit\" class=\"btn btn-primary\" value=\"تسجيل الدخول\">
                 <input type=\"hidden\" name=\"route\" value=\"login\">
             </form>
         </div>

@@ -49,7 +49,9 @@ class __TwigTemplate_2011f228547139245a2b2efaf6faa0831cda7043ee3603f574590415ff7
     <title>";
         // line 22
         $this->displayBlock('title', $context, $blocks);
-        echo " - My Webpage</title>
+        echo " - ";
+        echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = ($context["sets"] ?? null)) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["siteName"] ?? null) : null), "html", null, true);
+        echo "</title>
 </head>
 <body id=\"page-top\">
     <div id=\"wrapper\" class=\"toggled\">
@@ -73,10 +75,16 @@ class __TwigTemplate_2011f228547139245a2b2efaf6faa0831cda7043ee3603f574590415ff7
 
     </div>
 </div>
+    
+        <script src=\"vendor/jquery/jquery.min.js\"></script>
+        <script src=\"vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
+        <script src=\"vendor/jquery-easing/jquery.easing.min.js\"></script>
+        <script src=\"assets/js/jqBootstrapValidation.js\"></script>
+        <script src=\"assets/js/admin.js\"></script>
     ";
-        // line 39
+        // line 45
         $this->displayBlock('footerinc', $context, $blocks);
-        // line 46
+        // line 47
         echo "</body>
 </html>";
     }
@@ -104,16 +112,11 @@ class __TwigTemplate_2011f228547139245a2b2efaf6faa0831cda7043ee3603f574590415ff7
         ";
     }
 
-    // line 39
+    // line 45
     public function block_footerinc($context, array $blocks = array())
     {
-        // line 40
-        echo "        <script src=\"vendor/jquery/jquery.min.js\"></script>
-        <script src=\"vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>
-        <script src=\"vendor/jquery-easing/jquery.easing.min.js\"></script>
-        <script src=\"assets/js/jqBootstrapValidation.js\"></script>
-        <script src=\"assets/js/admin.js\"></script>
-    ";
+        // line 46
+        echo "    ";
     }
 
     public function getTemplateName()
@@ -128,7 +131,7 @@ class __TwigTemplate_2011f228547139245a2b2efaf6faa0831cda7043ee3603f574590415ff7
 
     public function getDebugInfo()
     {
-        return array (  111 => 40,  108 => 39,  101 => 29,  98 => 28,  93 => 22,  88 => 18,  85 => 17,  80 => 46,  78 => 39,  71 => 35,  65 => 31,  63 => 28,  58 => 26,  51 => 22,  47 => 20,  45 => 17,  27 => 1,);
+        return array (  119 => 46,  116 => 45,  109 => 29,  106 => 28,  101 => 22,  96 => 18,  93 => 17,  88 => 47,  86 => 45,  73 => 35,  67 => 31,  65 => 28,  60 => 26,  51 => 22,  47 => 20,  45 => 17,  27 => 1,);
     }
 
     public function getSourceContext()
